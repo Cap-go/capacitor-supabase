@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+
+# Swift Package Manager
+.build/
+Package.resolved
+
+# iOS
+ios/Pods/
+ios/DerivedData/
+ios/*.xcworkspace
+ios/build/
+.swiftpm/
+
+# Android
+android/.gradle/
+android/build/
+android/local.properties
+android/*.iml
+android/captures/
+android/.externalNativeBuild/
+android/.cxx/
+
+# Capacitor
+capacitor.config.ts
+capacitor.config.json
+
+# Misc
+*.tgz
+.env
+.env.local

@@ -1,0 +1,4 @@
+Pods/
+DerivedData/
+build/
+*.xcworkspace
