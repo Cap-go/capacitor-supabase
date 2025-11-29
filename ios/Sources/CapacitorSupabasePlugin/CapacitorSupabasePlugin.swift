@@ -4,7 +4,7 @@ import Supabase
 
 @objc(CapacitorSupabasePlugin)
 public class CapacitorSupabasePlugin: CAPPlugin, CAPBridgedPlugin {
-    private let pluginVersion: String = "7.0.0"
+    private let pluginVersion: String = "7.1.0"
     public let identifier = "CapacitorSupabasePlugin"
     public let jsName = "CapacitorSupabase"
     public let pluginMethods: [CAPPluginMethod] = [
