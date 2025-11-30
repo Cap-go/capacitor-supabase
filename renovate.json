@@ -10,7 +10,18 @@
   },
   "packageRules": [
     {
-      "matchPackageNames": ["ionic-team/capacitor-swift-pm"],
+      "matchPackageNames": [
+        "ionic-team/capacitor-swift-pm"
+      ],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": [
+        "androidx.core:core"
+      ],
+      "matchManagers": [
+        "gradle"
+      ],
       "enabled": false
     }
   ]
