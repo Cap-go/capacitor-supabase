@@ -24,6 +24,7 @@
   "bugs": {
     "url": "https://github.com/Cap-go/capacitor-supabase/issues"
   },
+  "homepage": "https://capgo.app/docs/plugins/",
   "keywords": [
     "capacitor",
     "supabase",
