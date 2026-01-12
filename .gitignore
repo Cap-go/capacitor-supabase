@@ -48,3 +48,4 @@ capacitor.config.json
 *.tgz
 .env
 .env.local
+package-lock.json
