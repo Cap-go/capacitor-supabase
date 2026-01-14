@@ -1,8 +1,38 @@
 # @capgo/capacitor-supabase
+ <a href="https://capgo.app/"><img src='https://raw.githubusercontent.com/Cap-go/capgo/main/assets/capgo_banner.png' alt='Capgo - Instant updates for capacitor'/></a>
+
+<div align="center">
+  <h2><a href="https://capgo.app/?ref=plugin_supabase"> ➡️ Get Instant updates for your App with Capgo</a></h2>
+  <h2><a href="https://capgo.app/consulting/?ref=plugin_supabase"> Missing a feature? We'll build the plugin for you 💪</a></h2>
+</div>
 
 Native Supabase SDK integration for Capacitor - Auth, Database, and JWT access.
 
-This plugin provides native iOS and Android Supabase SDK functionality with the ability to retrieve JWT tokens for use in JavaScript/web layers.
+## Why Capacitor Supabase?
+
+A native Supabase SDK integration that provides **real native authentication** with JWT token access for your Capacitor apps:
+
+- **Native SDK integration** - Full access to Supabase's native iOS and Android SDKs
+- **JWT token access** - Get JWT tokens from native auth for use in JavaScript/web layers
+- **Complete auth methods** - Email/password, OAuth, OTP, magic links, and more
+- **Session management** - Native session handling with automatic token refresh
+- **Database operations** - Native CRUD operations for Supabase tables
+- **Auth state listeners** - Real-time auth state change events
+- **Hybrid approach** - Use native auth with supabase-js for database queries
+- **Free and open source** - No paid services required
+
+Perfect for apps that need secure native authentication while leveraging Supabase's powerful backend services.
+
+**Why only Auth and basic DB operations?** The Supabase JS SDK already works great in Capacitor for most features (Realtime, Storage, Edge Functions, etc.). Building native bridges for every feature would add complexity without real benefits. This plugin focuses on **authentication** where native SDKs provide actual value (secure token storage, OAuth flows, biometrics). For everything else, just use `@supabase/supabase-js` with the JWT from native auth.
+
+**Why not bridge everything natively?**
+- **No performance gain** - The bridge overhead (JSON serialization/deserialization between JS and native) negates any benefit from skipping HTTP preflight requests. You're just moving the transformation cost from network to CPU.
+- **Type safety issue** - Native SDKs require typed models for every table/query. You'd need to define Swift/Kotlin types for your entire database schema and keep them in sync. With JS, you get dynamic typing that just works.
+- **Maintenance burden** - Every Supabase SDK update would require updating 3 codebases (JS, iOS, Android) instead of just one. The JS SDK is already well-maintained by Supabase.
+
+## Documentation
+
+The most complete doc is available here: https://capgo.app/docs/plugins/supabase/
 
 ## Install
 
