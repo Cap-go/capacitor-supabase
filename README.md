@@ -90,6 +90,14 @@ const { session, user } = await CapacitorSupabase.signUp({
 });
 ```
 
+#### Sign In Anonymously
+
+```typescript
+const { session, user } = await CapacitorSupabase.signInAnonymously();
+console.log('Anonymous user ID:', user?.id);
+// Later, you can link this anonymous account to a permanent account
+```
+
 #### OAuth Sign In
 
 ```typescript
@@ -269,6 +277,7 @@ const { data, error } = await CapacitorSupabase.delete({
 * [`initialize(...)`](#initialize)
 * [`signInWithPassword(...)`](#signinwithpassword)
 * [`signUp(...)`](#signup)
+* [`signInAnonymously()`](#signinanonymously)
 * [`signInWithOAuth(...)`](#signinwithoauth)
 * [`signInWithOtp(...)`](#signinwithotp)
 * [`verifyOtp(...)`](#verifyotp)
@@ -345,6 +354,22 @@ Sign up a new user with email and password.
 | Param         | Type                                                    | Description                                   |
 | ------------- | ------------------------------------------------------- | --------------------------------------------- |
 | **`options`** | <code><a href="#signupoptions">SignUpOptions</a></code> | - Email, password, and optional user metadata |
+
+**Returns:** <code>Promise&lt;<a href="#authresult">AuthResult</a>&gt;</code>
+
+**Since:** 0.0.1
+
+--------------------
+
+
+### signInAnonymously()
+
+```typescript
+signInAnonymously() => Promise<AuthResult>
+```
+
+Sign in anonymously.
+Creates a temporary guest session without requiring credentials.
 
 **Returns:** <code>Promise&lt;<a href="#authresult">AuthResult</a>&gt;</code>
 
