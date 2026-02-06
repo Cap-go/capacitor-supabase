@@ -1,6 +1,6 @@
 {
   "name": "@capgo/capacitor-supabase",
-  "version": "8.0.8",
+  "version": "8.0.9",
   "description": "Native Supabase SDK integration for Capacitor - Auth, Database, and JWT access",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
