@@ -181,6 +181,31 @@ class CapacitorSupabasePlugin : Plugin() {
     }
 
     @PluginMethod
+    fun signInAnonymously(call: PluginCall) {
+        val client = supabaseClient
+        if (client == null) {
+            call.reject("Supabase client not initialized. Call initialize() first.")
+            return
+        }
+
+        scope.launch {
+            try {
+                client.auth.signInAnonymously()
+
+                val session = client.auth.currentSessionOrNull()
+                val user = client.auth.currentUserOrNull()
+
+                val result = JSObject()
+                result.put("session", session?.let { sessionToJSObject(it) } ?: JSONObject.NULL)
+                result.put("user", user?.let { userToJSObject(it) } ?: JSONObject.NULL)
+                call.resolve(result)
+            } catch (e: Exception) {
+                call.reject("Anonymous sign in failed: ${e.message}")
+            }
+        }
+    }
+
+    @PluginMethod
     fun signInWithOAuth(call: PluginCall) {
         val client = supabaseClient
         if (client == null) {
