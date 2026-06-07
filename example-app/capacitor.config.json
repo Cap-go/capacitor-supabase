@@ -1,0 +1,15 @@
+{
+  "appId": "app.capgo.supabase.example",
+  "appName": "Supabase Example",
+  "webDir": "dist",
+  "plugins": {
+    "CapacitorUpdater": {
+      "appId": "app.capgo.supabase.example",
+      "autoUpdate": true,
+      "autoSplashscreen": true,
+      "directUpdate": "always",
+      "defaultChannel": "production",
+      "version": "1.0.0"
+    }
+  }
+}
