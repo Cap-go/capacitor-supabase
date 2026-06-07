@@ -12,8 +12,18 @@ const actions = [
     label: 'Initialize',
     description: 'Initialize the Supabase client with your project credentials.',
     inputs: [
-      { name: 'supabaseUrl', label: 'Supabase URL', type: 'text', placeholder: 'https://your-project.supabase.co' },
-      { name: 'supabaseKey', label: 'Supabase Anon Key', type: 'text', placeholder: 'your-anon-key' },
+      {
+        name: 'supabaseUrl',
+        label: 'Supabase URL',
+        type: 'text',
+        placeholder: 'https://your-project.supabase.co',
+      },
+      {
+        name: 'supabaseKey',
+        label: 'Supabase Anon Key',
+        type: 'text',
+        placeholder: 'your-anon-key',
+      },
     ],
     run: async (values) => {
       await plugin.initialize({
