@@ -8,8 +8,10 @@
       "autoUpdate": true,
       "autoSplashscreen": true,
       "directUpdate": "always",
-      "defaultChannel": "production",
       "version": "1.0.0"
+    },
+    "SplashScreen": {
+      "launchAutoHide": false
     }
   }
 }
