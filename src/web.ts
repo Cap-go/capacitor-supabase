@@ -36,6 +36,10 @@ export class CapacitorSupabaseWeb extends WebPlugin implements CapacitorSupabase
     throw new Error('Web implementation not available. Use @supabase/supabase-js directly for web.');
   }
 
+  async signInAnonymously(): Promise<AuthResult> {
+    throw new Error('Web implementation not available. Use @supabase/supabase-js directly for web.');
+  }
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async signInWithOAuth(_options: SignInWithOAuthOptions): Promise<void> {
     throw new Error('Web implementation not available. Use @supabase/supabase-js directly for web.');

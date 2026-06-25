@@ -589,6 +589,21 @@ export interface CapacitorSupabasePlugin {
   signUp(options: SignUpOptions): Promise<AuthResult>;
 
   /**
+   * Sign in anonymously.
+   * Creates a temporary guest session without requiring credentials.
+   *
+   * @returns Promise with session and user data
+   * @throws Error if anonymous sign-in fails
+   * @since 0.0.1
+   * @example
+   * ```typescript
+   * const { session, user } = await CapacitorSupabase.signInAnonymously();
+   * console.log('Anonymous user ID:', user?.id);
+   * ```
+   */
+  signInAnonymously(): Promise<AuthResult>;
+
+  /**
    * Sign in with an OAuth provider.
    * Opens the provider's authentication page.
    *
