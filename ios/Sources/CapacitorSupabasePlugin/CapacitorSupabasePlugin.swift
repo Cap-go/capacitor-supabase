@@ -138,6 +138,7 @@ public class CapacitorSupabasePlugin: CAPPlugin, CAPBridgedPlugin {
                 call.reject("Sign up failed: \(error.localizedDescription)")
             }
         }
+    }
 
     @objc func signInAnonymously(_ call: CAPPluginCall) {
         guard let client = supabaseClient else {
@@ -153,7 +154,6 @@ public class CapacitorSupabasePlugin: CAPPlugin, CAPBridgedPlugin {
                 call.reject("Anonymous sign in failed: \(error.localizedDescription)")
             }
         }
-    }
     }
 
     @objc func signInWithOAuth(_ call: CAPPluginCall) {
