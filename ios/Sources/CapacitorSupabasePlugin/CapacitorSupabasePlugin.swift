@@ -11,6 +11,7 @@ public class CapacitorSupabasePlugin: CAPPlugin, CAPBridgedPlugin {
         CAPPluginMethod(name: "initialize", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "signInWithPassword", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "signUp", returnType: CAPPluginReturnPromise),
+        CAPPluginMethod(name: "signInAnonymously", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "signInWithOAuth", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "signInWithOtp", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "verifyOtp", returnType: CAPPluginReturnPromise),
@@ -135,6 +136,22 @@ public class CapacitorSupabasePlugin: CAPPlugin, CAPBridgedPlugin {
                 call.resolve(authResultToDict(session: response.session, user: response.user))
             } catch {
                 call.reject("Sign up failed: \(error.localizedDescription)")
+            }
+        }
+    }
+
+    @objc func signInAnonymously(_ call: CAPPluginCall) {
+        guard let client = supabaseClient else {
+            call.reject("Supabase client not initialized. Call initialize() first.")
+            return
+        }
+
+        Task {
+            do {
+                let session = try await client.auth.signInAnonymously()
+                call.resolve(authResultToDict(session: session, user: session.user))
+            } catch {
+                call.reject("Anonymous sign in failed: \(error.localizedDescription)")
             }
         }
     }
