@@ -250,6 +250,7 @@ class CapacitorSupabasePlugin : Plugin() {
 
         val emailStr = call.getString("email")
         val phoneStr = call.getString("phone")
+        val shouldCreateUser = call.getBoolean("shouldCreateUser", true) ?: true
 
         if (emailStr.isNullOrEmpty() && phoneStr.isNullOrEmpty()) {
             call.reject("Either email or phone is required")
@@ -261,10 +262,12 @@ class CapacitorSupabasePlugin : Plugin() {
                 if (!emailStr.isNullOrEmpty()) {
                     client.auth.signInWith(OTP) {
                         email = emailStr
+                        createUser = shouldCreateUser
                     }
                 } else if (!phoneStr.isNullOrEmpty()) {
                     client.auth.signInWith(OTP) {
                         phone = phoneStr
+                        createUser = shouldCreateUser
                     }
                 }
                 call.resolve()

@@ -272,6 +272,13 @@ export interface SignInWithOtpOptions {
    * @since 0.0.1
    */
   phone?: string;
+
+  /**
+   * If set to false, this method will not create a new user. Defaults to true.
+   *
+   * @since 8.1.1
+   */
+  shouldCreateUser?: boolean;
 }
 
 /**
@@ -633,6 +640,12 @@ export interface CapacitorSupabasePlugin {
    * await CapacitorSupabase.signInWithOtp({
    *   email: 'user@example.com'
    * });
+   *
+   * // Alternatively, only sign in existing users (rejects for unknown emails):
+   * // await CapacitorSupabase.signInWithOtp({
+   * //   email: 'user@example.com',
+   * //   shouldCreateUser: false
+   * // });
    * ```
    */
   signInWithOtp(options: SignInWithOtpOptions): Promise<void>;
