@@ -747,11 +747,11 @@ Options for OAuth sign-in.
 
 Options for OTP sign-in.
 
-| Prop                   | Type                 | Description                                                                                                                                                                                                           | Since |
-| ---------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| **`email`**            | <code>string</code>  | <a href="#user">User</a>'s email address (required if phone is not provided).                                                                                                                                         | 0.0.1 |
-| **`phone`**            | <code>string</code>  | <a href="#user">User</a>'s phone number (required if email is not provided).                                                                                                                                          | 0.0.1 |
-| **`shouldCreateUser`** | <code>boolean</code> | If set to false, this method will not create a new user. Use it when you only want a returning user to sign in — a request for a non-existent user rejects instead of silently creating an account. Defaults to true. | 8.1.1 |
+| Prop                   | Type                 | Description                                                                   | Since |
+| ---------------------- | -------------------- | ----------------------------------------------------------------------------- | ----- |
+| **`email`**            | <code>string</code>  | <a href="#user">User</a>'s email address (required if phone is not provided). | 0.0.1 |
+| **`phone`**            | <code>string</code>  | <a href="#user">User</a>'s phone number (required if email is not provided).  | 0.0.1 |
+| **`shouldCreateUser`** | <code>boolean</code> | If set to false, this method will not create a new user. Defaults to true.    | 8.1.1 |
 
 
 #### VerifyOtpOptions

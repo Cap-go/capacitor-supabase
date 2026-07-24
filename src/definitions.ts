@@ -274,9 +274,7 @@ export interface SignInWithOtpOptions {
   phone?: string;
 
   /**
-   * If set to false, this method will not create a new user. Use it when you
-   * only want a returning user to sign in — a request for a non-existent user
-   * rejects instead of silently creating an account. Defaults to true.
+   * If set to false, this method will not create a new user. Defaults to true.
    *
    * @since 8.1.1
    */
