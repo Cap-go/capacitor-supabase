@@ -636,11 +636,11 @@ export interface CapacitorSupabasePlugin {
    *   email: 'user@example.com'
    * });
    *
-   * // Only sign in existing users (rejects for unknown emails):
-   * await CapacitorSupabase.signInWithOtp({
-   *   email: 'user@example.com',
-   *   shouldCreateUser: false
-   * });
+   * // Alternatively, only sign in existing users (rejects for unknown emails):
+   * // await CapacitorSupabase.signInWithOtp({
+   * //   email: 'user@example.com',
+   * //   shouldCreateUser: false
+   * // });
    * ```
    */
   signInWithOtp(options: SignInWithOtpOptions): Promise<void>;
