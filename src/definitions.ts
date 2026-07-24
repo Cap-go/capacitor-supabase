@@ -272,6 +272,15 @@ export interface SignInWithOtpOptions {
    * @since 0.0.1
    */
   phone?: string;
+
+  /**
+   * If set to false, this method will not create a new user. Use it when you
+   * only want a returning user to sign in — a request for a non-existent user
+   * rejects instead of silently creating an account. Defaults to true.
+   *
+   * @since 8.1.1
+   */
+  shouldCreateUser?: boolean;
 }
 
 /**
@@ -336,12 +345,7 @@ export interface SetSessionOptions {
  * @since 0.0.1
  */
 export type AuthChangeEvent =
-  | 'INITIAL_SESSION'
-  | 'SIGNED_IN'
-  | 'SIGNED_OUT'
-  | 'TOKEN_REFRESHED'
-  | 'USER_UPDATED'
-  | 'PASSWORD_RECOVERY';
+  'INITIAL_SESSION' | 'SIGNED_IN' | 'SIGNED_OUT' | 'TOKEN_REFRESHED' | 'USER_UPDATED' | 'PASSWORD_RECOVERY';
 
 /**
  * Auth state change callback data.
@@ -632,6 +636,12 @@ export interface CapacitorSupabasePlugin {
    * ```typescript
    * await CapacitorSupabase.signInWithOtp({
    *   email: 'user@example.com'
+   * });
+   *
+   * // Only sign in existing users (rejects for unknown emails):
+   * await CapacitorSupabase.signInWithOtp({
+   *   email: 'user@example.com',
+   *   shouldCreateUser: false
    * });
    * ```
    */
