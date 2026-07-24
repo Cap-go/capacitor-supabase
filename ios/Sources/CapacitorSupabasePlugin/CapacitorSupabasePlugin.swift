@@ -196,6 +196,7 @@ public class CapacitorSupabasePlugin: CAPPlugin, CAPBridgedPlugin {
 
         let email = call.getString("email")
         let phone = call.getString("phone")
+        let shouldCreateUser = call.getBool("shouldCreateUser") ?? true
 
         guard email != nil || phone != nil else {
             call.reject("Either email or phone is required")
@@ -205,9 +206,9 @@ public class CapacitorSupabasePlugin: CAPPlugin, CAPBridgedPlugin {
         Task {
             do {
                 if let email = email {
-                    try await client.auth.signInWithOTP(email: email)
+                    try await client.auth.signInWithOTP(email: email, shouldCreateUser: shouldCreateUser)
                 } else if let phone = phone {
-                    try await client.auth.signInWithOTP(phone: phone)
+                    try await client.auth.signInWithOTP(phone: phone, shouldCreateUser: shouldCreateUser)
                 }
                 call.resolve()
             } catch {
