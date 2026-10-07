@@ -1,12 +1,28 @@
 # @capgo/capacitor-supabase
-<a href="https://capgo.app/"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-supabase" alt="Capgo - Instant updates for Capacitor" /></a>
+
+Use the native Supabase SDKs from your Capacitor app for auth and database calls, and get JWTs for your web layer.
+
+<a href="https://capgo.app/?ref=plugin_supabase"><img src="https://capgo.app/readme-banner.svg?repo=Cap-go/capacitor-supabase" alt="Capgo - Instant updates for Capacitor" /></a>
 
 <div align="center">
-  <h2><a href="https://capgo.app/?ref=plugin_supabase"> ➡️ Get Instant updates for your App with Capgo</a></h2>
-  <h2><a href="https://capgo.app/consulting/?ref=plugin_supabase"> Missing a feature? We'll build the plugin for you 💪</a></h2>
+  <p><b>Capgo</b>: open-source live updates for Ionic and Capacitor apps. Ship OTA fixes and features instantly, without waiting for app store review.</p>
+  <h2><a href="https://capgo.app/register/?ref=plugin_supabase">➡️ Get started for free</a></h2>
+  <p>14-day unlimited free trial. No credit card required</p>
+  <p><a href="https://capgo.app/consulting/?ref=plugin_supabase">Missing a feature? We'll build the plugin for you 💪</a></p>
 </div>
 
-Native Supabase SDK integration for Capacitor - Auth, Database, and JWT access.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Cap-go/capacitor-supabase/main/assets/github-social-preview.png" alt="@capgo/capacitor-supabase for Capacitor apps" width="300" />
+</p>
+
+## Key features
+
+- **Auth methods**: email and password, sign up, anonymous, OAuth providers and OTP with `verifyOtp()`.
+- **Sessions**: `getSession()`, `refreshSession()`, `setSession()`, `getUser()` and `signOut()`, with the `authStateChange` event.
+- **JWT access**: sessions include the access token for your own API calls.
+- **Database**: `select()`, `insert()`, `update()` and `delete()` on your tables.
+- **Native SDKs**: supabase-swift on iOS and supabase-kt on Android.
+- **Platforms**: iOS and Android. On web, use `@supabase/supabase-js` directly.
 
 ## Why Capacitor Supabase?
 
