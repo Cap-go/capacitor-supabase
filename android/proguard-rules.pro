@@ -20,17 +20,4 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
-# Keep Supabase classes
--keep class io.github.jan.supabase.** { *; }
--keep class io.ktor.** { *; }
-
-# Keep kotlinx.serialization
--keepattributes *Annotation*, InnerClasses
--dontnote kotlinx.serialization.AnnotationsKt
-
--keepclassmembers class kotlinx.serialization.json.** {
-    *** Companion;
-}
--keepclasseswithmembers class kotlinx.serialization.json.** {
-    kotlinx.serialization.KSerializer serializer(...);
-}
+# Rules needed by consuming apps ship in consumer-rules.pro.

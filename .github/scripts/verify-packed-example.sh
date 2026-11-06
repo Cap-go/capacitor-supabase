@@ -45,7 +45,16 @@ case "$platform" in
     fi
     bunx cap sync android
     cd android
-    ./gradlew build test
+    ./gradlew build test assembleRelease
+    mapping="app/build/outputs/mapping/release/mapping.txt"
+    if [ ! -f "$mapping" ]; then
+      echo "Expected R8 mapping at $mapping after assembleRelease"
+      exit 1
+    fi
+    if ! grep -q 'ee\.forgr\.plugin\.capacitor_supabase\.CapacitorSupabasePlugin' "$mapping"; then
+      echo "R8 mapping does not reference CapacitorSupabasePlugin (plugin may have been stripped)"
+      exit 1
+    fi
     ;;
   ios)
     if [ ! -d ios ]; then
