@@ -7,6 +7,10 @@
 -keep class io.github.jan.supabase.** { *; }
 -keep class io.ktor.** { *; }
 
+# Ktor references java.lang.management for IDE debug detection on the JVM; those types are not on Android, so R8 needs a narrow dontwarn.
+-dontwarn java.lang.management.ManagementFactory
+-dontwarn java.lang.management.RuntimeMXBean
+
 # kotlinx.serialization json facades and compiler generated $serializer stubs (used for UserInfo metadata and request bodies).
 -keepattributes *Annotation*, InnerClasses
 -dontnote kotlinx.serialization.AnnotationsKt
