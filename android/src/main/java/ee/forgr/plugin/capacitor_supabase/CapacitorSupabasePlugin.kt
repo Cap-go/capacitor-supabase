@@ -181,9 +181,6 @@ class CapacitorSupabasePlugin : Plugin() {
     }
 
     @PluginMethod
-    fun signInWithOAuth(call: PluginCall) {
-
-    @PluginMethod
     fun signInAnonymously(call: PluginCall) {
         val client = supabaseClient
         if (client == null) {
@@ -207,6 +204,9 @@ class CapacitorSupabasePlugin : Plugin() {
             }
         }
     }
+
+    @PluginMethod
+    fun signInWithOAuth(call: PluginCall) {
         val client = supabaseClient
         if (client == null) {
             call.reject("Supabase client not initialized. Call initialize() first.")
@@ -214,8 +214,6 @@ class CapacitorSupabasePlugin : Plugin() {
         }
 
         val providerString = call.getString("provider")
-        val redirectTo = call.getString("redirectTo")
-
         if (providerString.isNullOrEmpty()) {
             call.reject("Missing provider")
             return
